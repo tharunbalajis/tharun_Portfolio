@@ -1,4 +1,4 @@
-// color values: 'violet' | 'blue' | 'emerald' | 'pink'
+// color values: 'accent' | 'blue' | 'emerald' | 'pink'
 export const projects = [
   {
     title: 'CivicFlow – AI Driven Civic Intelligence',
@@ -10,7 +10,7 @@ export const projects = [
     metric: 'Automated multimodal issue routing',
     github: null,
     live: null,
-    color: 'violet',
+    color: 'accent',
   },
   {
     title: 'EDUOS – College Management SaaS',

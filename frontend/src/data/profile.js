@@ -12,6 +12,7 @@ export const profile = {
   github: 'https://github.com/tharunbalajis',
   linkedin: 'https://linkedin.com/in/tharun-balaji-s',
   gfg: 'https://www.geeksforgeeks.org/user/gfg-prof',
+  resumeUrl: '/resume.pdf',
   techStack: ['Python', 'Node.js', 'React', 'FastAPI', 'PostgreSQL'],
   highlights: [
     {

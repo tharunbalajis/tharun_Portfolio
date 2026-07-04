@@ -7,20 +7,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        violet: {
-          500: '#7C3AED',
-          600: '#6D28D9',
-          700: '#5B21B6',
-        },
-        blue: {
-          500: '#2563EB',
-          600: '#1D4ED8',
+        accent: {
+          300: '#FFC670',
+          400: '#FFAB40',
+          500: '#FF9A1F',
+          600: '#F5820B',
+          700: '#D66A00',
         },
         dark: {
-          900: '#0B0B0F',
-          800: '#111114',
-          700: '#1A1A1F',
-          600: '#252529',
+          900: '#000000',
+          800: '#0A0A0A',
+          700: '#141414',
+          600: '#202020',
         },
       },
       fontFamily: {
@@ -41,8 +39,8 @@ export default {
           '50%': { transform: 'translateY(-20px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(124, 58, 237, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(124, 58, 237, 0.6)' },
+          '0%': { boxShadow: '0 0 20px rgba(255, 154, 31, 0.3)' },
+          '100%': { boxShadow: '0 0 40px rgba(255, 154, 31, 0.6)' },
         },
       },
     },

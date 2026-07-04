@@ -27,7 +27,7 @@ function Particles({ count = 1500 }) {
       <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color="#7C3AED"
+          color="#FF9A1F"
           size={0.018}
           sizeAttenuation
           depthWrite={false}
@@ -65,8 +65,8 @@ export default function Background3D() {
       <Canvas camera={{ position: [0, 0, 5], fov: 60 }} dpr={[1, 1.5]}>
         <ambientLight intensity={0.5} />
         <Particles />
-        <FloatingMesh position={[2, 0, -2]}   color="#7C3AED" geometry="icosahedron" speed={1} />
-        <FloatingMesh position={[-2.5, 1, -1.5]} color="#2563EB" geometry="octahedron"  speed={0.8} />
+        <FloatingMesh position={[2, 0, -2]}   color="#FF9A1F" geometry="icosahedron" speed={1} />
+        <FloatingMesh position={[-2.5, 1, -1.5]} color="#F5820B" geometry="octahedron"  speed={0.8} />
       </Canvas>
     </div>
   );

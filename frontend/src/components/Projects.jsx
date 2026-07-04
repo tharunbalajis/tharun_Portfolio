@@ -4,7 +4,7 @@ import { projects } from '../data/projects';
 
 // Must be literal strings so Tailwind JIT includes them
 const colorMap = {
-  violet:  { bar: 'from-violet-600 to-purple-600',  bg: 'from-violet-600/25 to-purple-600/25',  text: 'text-violet-400',  badge: 'bg-violet-500/12 text-violet-300 border-violet-500/25' },
+  accent:  { bar: 'from-accent-500 to-accent-700',  bg: 'from-accent-500/25 to-accent-700/25',  text: 'text-accent-400',  badge: 'bg-accent-500/12 text-accent-300 border-accent-500/25' },
   blue:    { bar: 'from-blue-600 to-cyan-600',       bg: 'from-blue-600/25 to-cyan-600/25',       text: 'text-blue-400',    badge: 'bg-blue-500/12 text-blue-300 border-blue-500/25' },
   emerald: { bar: 'from-emerald-600 to-teal-600',    bg: 'from-emerald-600/25 to-teal-600/25',    text: 'text-emerald-400', badge: 'bg-emerald-500/12 text-emerald-300 border-emerald-500/25' },
   pink:    { bar: 'from-pink-600 to-rose-600',       bg: 'from-pink-600/25 to-rose-600/25',       text: 'text-pink-400',    badge: 'bg-pink-500/12 text-pink-300 border-pink-500/25' },
@@ -27,7 +27,7 @@ function ExternalLinkIcon() {
 }
 
 function ProjectModal({ project, onClose }) {
-  const colors = colorMap[project.color] ?? colorMap.violet;
+  const colors = colorMap[project.color] ?? colorMap.accent;
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -107,8 +107,8 @@ export default function Projects() {
   return (
     <section id="projects" className="py-28 bg-dark-900 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-0 w-[28rem] h-[28rem] bg-blue-500/8 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-0 w-[28rem] h-[28rem] bg-violet-500/8 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-0 w-[28rem] h-[28rem] bg-accent-700/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-[28rem] h-[28rem] bg-accent-500/8 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -119,13 +119,13 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <p className="text-violet-400 text-sm font-semibold tracking-widest uppercase mb-3">
+          <p className="text-accent-400 text-sm font-semibold tracking-widest uppercase mb-3">
             What I've Built
           </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="gradient-text">Projects</span>
           </h2>
-          <div className="w-20 h-0.5 bg-gradient-to-r from-violet-500 to-blue-500 mx-auto rounded-full" />
+          <div className="w-20 h-0.5 bg-gradient-to-r from-accent-400 to-accent-600 mx-auto rounded-full" />
           <p className="text-gray-400 mt-5 max-w-xl mx-auto text-[15px]">
             Selected work showcasing AI/ML and full-stack engineering
           </p>
@@ -133,7 +133,7 @@ export default function Projects() {
 
         <div className="grid md:grid-cols-2 gap-7">
           {projects.map((project, index) => {
-            const colors = colorMap[project.color] ?? colorMap.violet;
+            const colors = colorMap[project.color] ?? colorMap.accent;
             return (
               <motion.div
                 key={project.title}
@@ -144,14 +144,14 @@ export default function Projects() {
                 whileHover={{ y: -8, transition: { duration: 0.25 } }}
                 className="group"
               >
-                <div className="relative glass rounded-2xl overflow-hidden hover:shadow-[0_0_40px_rgba(124,58,237,0.22)] transition-shadow duration-500 h-full flex flex-col">
+                <div className="relative glass rounded-2xl overflow-hidden hover:shadow-[0_0_40px_rgba(255,154,31,0.22)] transition-shadow duration-500 h-full flex flex-col">
                   {/* Accent bar */}
                   <div className={`h-1 bg-gradient-to-r ${colors.bar} flex-shrink-0`} />
 
                   {/* Gradient icon area */}
                   <div className={`h-40 bg-gradient-to-br ${colors.bg} flex items-center justify-center flex-shrink-0`}>
                     <span className="text-5xl opacity-70" role="img" aria-hidden>
-                      {project.color === 'violet' ? '🌐' : project.color === 'blue' ? '🛡️' : project.color === 'emerald' ? '🛰️' : '📚'}
+                      {project.color === 'accent' ? '🌐' : project.color === 'blue' ? '🛡️' : project.color === 'emerald' ? '🛰️' : '📚'}
                     </span>
                   </div>
 
@@ -160,7 +160,7 @@ export default function Projects() {
                     {/* Title row with links */}
                     <div className="flex items-start justify-between gap-3 mb-3">
                       <h3
-                        className="text-xl font-bold text-white group-hover:text-violet-300 transition-colors duration-200 cursor-pointer"
+                        className="text-xl font-bold text-white group-hover:text-accent-300 transition-colors duration-200 cursor-pointer"
                         onClick={() => setSelectedProject(project)}
                       >
                         {project.title}

@@ -63,14 +63,14 @@ export default function CustomCursor() {
       >
         <div
           className={`w-full h-full rounded-full transition-all duration-150 ${
-            isHovering ? 'bg-violet-500/80 scale-150' : 'bg-violet-500/40'
+            isHovering ? 'bg-accent-500/80 scale-150' : 'bg-accent-500/40'
           }`}
         />
       </motion.div>
 
       {/* Outer ring */}
       <motion.div
-        className="fixed top-0 left-0 w-12 h-12 rounded-full border-2 border-violet-500/30 pointer-events-none z-[9998] hidden md:block"
+        className="fixed top-0 left-0 w-12 h-12 rounded-full border-2 border-accent-500/30 pointer-events-none z-[9998] hidden md:block"
         style={{ x: cursorX, y: cursorY }}
         animate={{ scale: isHovering ? 1.6 : 1, opacity: isHovering ? 0.6 : 0.3 }}
         transition={{ duration: 0.2 }}
@@ -78,7 +78,7 @@ export default function CustomCursor() {
 
       {/* Ambient glow */}
       <motion.div
-        className="fixed top-0 left-0 w-64 h-64 rounded-full bg-violet-500/5 pointer-events-none z-[9997] hidden md:block blur-3xl"
+        className="fixed top-0 left-0 w-64 h-64 rounded-full bg-accent-500/5 pointer-events-none z-[9997] hidden md:block blur-3xl"
         style={{ x: cursorX, y: cursorY }}
       />
     </>

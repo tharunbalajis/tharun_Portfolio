@@ -7,9 +7,9 @@ const socialLinks = [
     label: 'Email',
     value: profile.email,
     href: `mailto:${profile.email}`,
-    hoverColor: 'hover:shadow-[0_0_20px_rgba(124,58,237,0.2)]',
-    iconBg: 'bg-violet-600/20',
-    iconColor: 'text-violet-400',
+    hoverColor: 'hover:shadow-[0_0_20px_rgba(255,154,31,0.2)]',
+    iconBg: 'bg-accent-600/20',
+    iconColor: 'text-accent-400',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -20,9 +20,9 @@ const socialLinks = [
     label: 'LinkedIn',
     value: profile.linkedin.replace('https://', ''),
     href: profile.linkedin,
-    hoverColor: 'hover:shadow-[0_0_20px_rgba(37,99,235,0.2)]',
-    iconBg: 'bg-blue-600/20',
-    iconColor: 'text-blue-400',
+    hoverColor: 'hover:shadow-[0_0_20px_rgba(255,154,31,0.2)]',
+    iconBg: 'bg-accent-700/20',
+    iconColor: 'text-accent-500',
     icon: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -33,7 +33,7 @@ const socialLinks = [
     label: 'GitHub',
     value: profile.github.replace('https://', ''),
     href: profile.github,
-    hoverColor: 'hover:shadow-[0_0_20px_rgba(124,58,237,0.2)]',
+    hoverColor: 'hover:shadow-[0_0_20px_rgba(255,154,31,0.2)]',
     iconBg: 'bg-dark-600',
     iconColor: 'text-white',
     icon: (
@@ -73,13 +73,13 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const inputClass =
-    'w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 focus:shadow-[0_0_16px_rgba(124,58,237,0.25)] transition-all duration-300 text-sm';
+    'w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 focus:shadow-[0_0_16px_rgba(255,154,31,0.25)] transition-all duration-300 text-sm';
 
   return (
     <section id="contact" className="py-28 bg-dark-800 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-0 w-[28rem] h-[28rem] bg-violet-500/8 rounded-full blur-3xl" />
-        <div className="absolute top-0 right-0 w-[28rem] h-[28rem] bg-blue-500/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[28rem] h-[28rem] bg-accent-500/8 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-[28rem] h-[28rem] bg-accent-700/8 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -90,13 +90,13 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <p className="text-violet-400 text-sm font-semibold tracking-widest uppercase mb-3">
+          <p className="text-accent-400 text-sm font-semibold tracking-widest uppercase mb-3">
             Let's Talk
           </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="gradient-text">Get In Touch</span>
           </h2>
-          <div className="w-20 h-0.5 bg-gradient-to-r from-violet-500 to-blue-500 mx-auto rounded-full" />
+          <div className="w-20 h-0.5 bg-gradient-to-r from-accent-400 to-accent-600 mx-auto rounded-full" />
           <p className="text-gray-400 mt-5 max-w-xl mx-auto text-[15px]">
             Have a project in mind or want to collaborate? I'd love to connect.
           </p>
@@ -149,9 +149,9 @@ export default function Contact() {
               <motion.button
                 type="submit"
                 disabled={status === 'loading'}
-                whileHover={{ scale: 1.02, boxShadow: '0 0 32px rgba(124,58,237,0.5)' }}
+                whileHover={{ scale: 1.02, boxShadow: '0 0 32px rgba(255,154,31,0.5)' }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-3.5 bg-gradient-to-r from-violet-600 to-blue-600 rounded-xl font-semibold text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-3.5 bg-accent-500 rounded-xl font-semibold text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {status === 'loading' ? 'Sending…' : 'Send Message'}
               </motion.button>
