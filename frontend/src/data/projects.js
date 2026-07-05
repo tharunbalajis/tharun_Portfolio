@@ -1,4 +1,4 @@
-// color values: 'accent' | 'blue' | 'emerald' | 'pink'
+// color values: 'accent' | 'blue' | 'emerald' | 'pink' | 'purple'
 export const projects = [
   {
     title: 'CivicFlow – AI Driven Civic Intelligence',
@@ -8,8 +8,8 @@ export const projects = [
       'CivicFlow addresses civic reporting inefficiency by combining RAG-based duplicate detection with multimodal computer vision. Using CLIP, YOLOv8, and PRNU, the system performs image verification, intelligent issue classification, and automated routing of civic reports — drastically reducing manual review overhead.',
     tech: ['Python', 'RAG Pipelines', 'CLIP', 'YOLOv8', 'PRNU', 'LLM'],
     metric: 'Automated multimodal issue routing',
-    github: null,
-    live: null,
+    github: 'https://github.com/tharunbalajis/civicflow',
+    live: 'https://civicflow-plum.vercel.app',
     color: 'accent',
   },
   {
@@ -35,5 +35,17 @@ export const projects = [
     github: null,
     live: null,
     color: 'emerald',
+  },
+  {
+    title: 'AMS – Apartment Management System',
+    description:
+      'Multi-tenant REST API and admin dashboard for residential society management, covering 11 modules including residents, financials, complaints, visitor security, amenities, and compliance.',
+    fullDescription:
+      'AMS is a multi-tenant apartment/society management platform built with a Fastify backend structured in a handler → service → repository → schema layering, with society-scoped multi-tenancy and AJV request validation. It implements full RBAC across six roles (Super Admin, Society Admin, Owner, Tenant, Staff, Manager) spanning resident and unit management, visitor management with QR-code validation, complaints and maintenance tracking, amenity booking, and financial management. The frontend is a React + TypeScript monorepo (Turborepo/pnpm workspaces) using TanStack Query for server state and Zustand for client state. Notable engineering work included debugging and fixing systemic pagination and null-tenant-scoping bugs affecting the visitor security module at production scale.',
+    tech: ['Node.js', 'Fastify', 'PostgreSQL', 'Knex', 'React', 'TypeScript', 'TanStack Query', 'Zustand'],
+    metric: 'Full RBAC across 6 roles with QR-based visitor security',
+    github: null,
+    live: 'https://ams.bluekode.com/',
+    color: 'purple',
   },
 ];

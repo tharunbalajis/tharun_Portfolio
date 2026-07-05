@@ -8,6 +8,7 @@ const colorMap = {
   blue:    { bar: 'from-blue-600 to-cyan-600',       bg: 'from-blue-600/25 to-cyan-600/25',       text: 'text-blue-400',    badge: 'bg-blue-500/12 text-blue-300 border-blue-500/25' },
   emerald: { bar: 'from-emerald-600 to-teal-600',    bg: 'from-emerald-600/25 to-teal-600/25',    text: 'text-emerald-400', badge: 'bg-emerald-500/12 text-emerald-300 border-emerald-500/25' },
   pink:    { bar: 'from-pink-600 to-rose-600',       bg: 'from-pink-600/25 to-rose-600/25',       text: 'text-pink-400',    badge: 'bg-pink-500/12 text-pink-300 border-pink-500/25' },
+  purple:  { bar: 'from-purple-600 to-fuchsia-600',  bg: 'from-purple-600/25 to-fuchsia-600/25',  text: 'text-purple-400',  badge: 'bg-purple-500/12 text-purple-300 border-purple-500/25' },
 };
 
 function GitHubIcon() {
@@ -151,7 +152,7 @@ export default function Projects() {
                   {/* Gradient icon area */}
                   <div className={`h-40 bg-gradient-to-br ${colors.bg} flex items-center justify-center flex-shrink-0`}>
                     <span className="text-5xl opacity-70" role="img" aria-hidden>
-                      {project.color === 'accent' ? '🌐' : project.color === 'blue' ? '🛡️' : project.color === 'emerald' ? '🛰️' : '📚'}
+                      {project.color === 'accent' ? '🌐' : project.color === 'blue' ? '🛡️' : project.color === 'emerald' ? '🛰️' : project.color === 'purple' ? '🏢' : '📚'}
                     </span>
                   </div>
 
