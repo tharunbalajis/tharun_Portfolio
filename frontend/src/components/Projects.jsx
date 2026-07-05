@@ -27,6 +27,73 @@ function ExternalLinkIcon() {
   );
 }
 
+function BoltIcon() {
+  return (
+    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13 3L4 14h6l-1 7 9-11h-6l1-7z" />
+    </svg>
+  );
+}
+
+// Line-style domain icons for the card header — one per project.color
+function GlobeIcon() {
+  return (
+    <svg className="w-9 h-9" fill="none" stroke="currentColor" strokeWidth={1.4} viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" />
+      <ellipse cx="12" cy="12" rx="4" ry="9" />
+      <path strokeLinecap="round" d="M3 12h18" />
+    </svg>
+  );
+}
+
+function ShieldIcon() {
+  return (
+    <svg className="w-9 h-9" fill="none" stroke="currentColor" strokeWidth={1.4} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
+    </svg>
+  );
+}
+
+function ChipIcon() {
+  return (
+    <svg className="w-9 h-9" fill="none" stroke="currentColor" strokeWidth={1.4} viewBox="0 0 24 24">
+      <rect x="7" y="7" width="10" height="10" rx="1.5" />
+      <path strokeLinecap="round" d="M9 3v3M12 3v3M15 3v3M9 18v3M12 18v3M15 18v3M3 9h3M3 12h3M3 15h3M18 9h3M18 12h3M18 15h3" />
+    </svg>
+  );
+}
+
+function BuildingIcon() {
+  return (
+    <svg className="w-9 h-9" fill="none" stroke="currentColor" strokeWidth={1.4} viewBox="0 0 24 24">
+      <rect x="5" y="3" width="9" height="18" rx="1" />
+      <rect x="14" y="9" width="6" height="12" rx="1" />
+      <path strokeLinecap="round" d="M8 7h1M11 7h1M8 11h1M11 11h1M8 15h1M11 15h1M17 12h1M17 15h1M17 18h1" />
+    </svg>
+  );
+}
+
+function CodeIcon() {
+  return (
+    <svg className="w-9 h-9" fill="none" stroke="currentColor" strokeWidth={1.4} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 7L3 12l5 5M16 7l5 5-5 5M14 4l-4 16" />
+    </svg>
+  );
+}
+
+const domainIconMap = {
+  accent: GlobeIcon,
+  blue: ShieldIcon,
+  emerald: ChipIcon,
+  purple: BuildingIcon,
+};
+
+function ProjectDomainIcon({ color }) {
+  const Icon = domainIconMap[color] ?? CodeIcon;
+  return <Icon />;
+}
+
 function ProjectModal({ project, onClose }) {
   const colors = colorMap[project.color] ?? colorMap.accent;
   return (
@@ -64,7 +131,7 @@ function ProjectModal({ project, onClose }) {
 
           {project.metric && (
             <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border mb-5 ${colors.badge}`}>
-              ⚡ {project.metric}
+              <BoltIcon /> {project.metric}
             </div>
           )}
 
@@ -149,11 +216,11 @@ export default function Projects() {
                   {/* Accent bar */}
                   <div className={`h-1 bg-gradient-to-r ${colors.bar} flex-shrink-0`} />
 
-                  {/* Gradient icon area */}
+                  {/* Icon area */}
                   <div className={`h-40 bg-gradient-to-br ${colors.bg} flex items-center justify-center flex-shrink-0`}>
-                    <span className="text-5xl opacity-70" role="img" aria-hidden>
-                      {project.color === 'accent' ? '🌐' : project.color === 'blue' ? '🛡️' : project.color === 'emerald' ? '🛰️' : project.color === 'purple' ? '🏢' : '📚'}
-                    </span>
+                    <div className={`${colors.text} opacity-90`}>
+                      <ProjectDomainIcon color={project.color} />
+                    </div>
                   </div>
 
                   {/* Content */}
@@ -202,7 +269,7 @@ export default function Projects() {
                     {/* Impact metric */}
                     {project.metric && (
                       <div className={`inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full text-xs font-semibold border mb-4 ${colors.badge}`}>
-                        ⚡ {project.metric}
+                        <BoltIcon /> {project.metric}
                       </div>
                     )}
 
