@@ -94,8 +94,7 @@ export default function Navbar() {
         {/* Resume button */}
         <motion.a
           href={profile.resumeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          download="Tharun_Balaji_S_Resume.pdf"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent-500 hover:bg-accent-400 text-black font-semibold text-sm transition-colors duration-200"

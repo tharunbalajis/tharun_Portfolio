@@ -4,5 +4,9 @@
   "version": "1.0.0",
   "workspaces": [
     "frontend"
-  ]
+  ],
+  "dependencies": {
+    "framer-motion": "^12.42.2",
+    "react": "^18.3.1"
+  }
 }
