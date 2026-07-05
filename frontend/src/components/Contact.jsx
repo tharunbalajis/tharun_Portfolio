@@ -48,13 +48,21 @@ export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState(null);
 
+  // Replace YOUR_FORM_ID below with the ID Formspree gives you after
+  // creating a form at https://formspree.io (Settings -> your endpoint
+  // looks like https://formspree.io/f/abcdwxyz)
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mojorpnb';
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('loading');
     try {
-      const res = await fetch('http://localhost:5000/api/contact', {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
         body: JSON.stringify(formData),
       });
       if (res.ok) {
@@ -64,8 +72,7 @@ export default function Contact() {
         setStatus('error');
       }
     } catch {
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+      setStatus('error');
     }
   };
 
